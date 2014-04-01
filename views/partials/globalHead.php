@@ -11,4 +11,9 @@
 	<!--[if gt IE 8]><!--><link href="/templates/leaf-base/resources/c/css/global.css" rel="stylesheet"><!--<![endif]-->
 	<!-- End Styles -->
 
+	<!--Typekit-->
+	<script type="text/javascript" src="//use.typekit.net/tzb8dcr.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<!--End Typekit-->
+
 </head>
