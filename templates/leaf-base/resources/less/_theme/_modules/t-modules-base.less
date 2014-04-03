@@ -1,5 +1,4 @@
 .main-nav {
-	background-color: @client-color-2;
 
 	&--list {
 		margin-top: 0;
@@ -10,14 +9,23 @@
 			
 			display: block;
 			padding: @10px @15px;
-			color: @white;
 			text-decoration: none;
 
 			&:hover,
 			&:focus,
 			&.is-current {
-				background-color: darken(@client-color-2, 10%);
 			}
 		}
 	}
+}
+
+
+.eyebrow-nav {
+	border-bottom: dashed 1px @light-grey;
+	color: @grey;
+}
+
+.eyebrow-nav--link {
+	color: @client-color-2;
+	text-decoration: none;
 }

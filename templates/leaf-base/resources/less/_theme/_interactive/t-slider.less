@@ -1,0 +1,163 @@
+// Browser Resets
+.flex-container a:active,.flexslider a:active,.flex-container a:focus,.flexslider a:focus  {
+	outline: none;
+}
+
+.slides,.flex-control-nav,.flex-direction-nav {
+	margin: 0; padding: 0; list-style: none;
+}
+
+.flexslider .slides { zoom: 1; }
+
+
+// Cleearfix
+.slides:after {
+	content: "\0020"; 
+	display: block; 
+	clear: both; 
+	visibility: hidden; 
+	line-height: 0; 
+	height: 0;
+}
+
+html[xmlns] .slides {
+	display: block;
+}
+* html .slides {
+	height: 1%;
+}
+
+// No JS Fallback
+
+.no-js .slides > li:first-child {display: block;}
+
+// Flex Slider
+
+.flexslider {
+	margin: 0;
+	padding: 0;
+
+	.slides {
+
+		> li {
+			display:none;
+			-webkit-backface-visibility: hidden;
+		}
+
+		img {
+			width: 100%; 
+			display: block;
+		}
+	}
+}
+
+
+.flex-control-nav {
+	width: 100%; 
+	position: absolute; 
+	z-index: 3;
+	bottom: 2%; 
+	text-align: center;	
+
+	li {
+		margin: 0 6px; 
+		display: inline-block; 
+		zoom: 1; 
+		*display: inline;
+	}
+		
+
+}
+
+.flex-control-paging  {
+
+	li a{
+		width: 11px; 
+		height: 11px; 
+		display: block;
+		background: @grey;
+		cursor: pointer; 
+		text-indent: -9999px; 
+
+		// Mixins
+		.border-radius(50);
+
+		&:hover {
+			background: @dark-grey;
+		}
+
+		&.flex-active {
+			background: @white;
+		}
+	}
+
+}
+
+
+// Slide Background Images
+
+[class*='js-slide'] {
+	position:relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;	
+	height:500px;
+}
+
+.js-slide {
+
+	&--1 {
+		background-image:url("http://placehold.it/1000x500");
+	}
+
+	&--2 {
+		background-image:url("http://placehold.it/1000x500");
+	}
+
+	&--3 {
+		background-image:url("@{base-path-images}slides/slide3.jpg");
+	}
+
+	&--4 {
+		background-image:url("@{base-path-images}slides/slide4.jpg");
+	}
+}
+
+// Slide Captions
+
+.slide-caption--container {
+	// Variables
+	@75px: (1em * (75 / @base-text-size));
+
+	position:absolute;
+	bottom:@75px;
+	left:0;
+	width:100%;
+	color:@white;
+}
+
+.slide-caption__heading {
+	// Variables
+	@10px: (1em * (10 / @base-text-size));
+	@15px: (1em * (15 / @base-text-size));
+
+	&--top {
+		text-transform: uppercase;
+		letter-spacing:2px;
+	
+		// Mixins
+		.size-for-font(@inch-text-size);
+	}
+
+	&--bottom {
+		display:inline-block;
+		font-style: italic;
+		font-family: @tisa-pro;
+		background:fade(@client-color-2, 80%);
+		padding:@10px @15px;
+		margin-top:0;
+
+		// Mixins
+		.size-for-font(@primer-text-size);
+	}
+}
