@@ -5,6 +5,7 @@
 	@10px: 1em * (10 / @base-text-size);
 	@15px: 1em * (15 / @base-text-size);
 	@20px: 1em * (20 / @base-text-size);
+	@30px: 1em * (30 / @base-text-size);
 
 	// Gradient Colors
 	@color-1: lighten(@grey, 20%);
@@ -28,37 +29,53 @@
 	
 	// Styling Begins
 	margin: @20px 0 0 0;
-	padding: @10px @15px;
+	padding: @15px @30px;
 	background-color: @blue;
-	border: @1px solid @color-2;
-	color: @dark-grey;
+	color: @dark-grey;	
 
 	// Mixins
 	.inline-block-fallback();
 	.size-for-font(@base-text-size);
-	.border-radius(@3px);
-	.background-linear-gradient(0, @color-1, 100%, @color-2);
 
 	&:hover,
 	&:focus {
 
-		// Mixins
-		.background-linear-gradient(0, @color-1, 100%, @color-1);
 	}
 
 	&.primary {
 		// Create
-		border: @1px solid @blue;
 		color: @white;
+		background: @client-color-2;
+		text-transform: uppercase;		
+		position:relative;
+		overflow:hidden;
+		letter-spacing: 1px;
 
-		// Mixins
-		.background-linear-gradient(0, @blue, 100%, @dark-blue);
+
+		//&:before {
+			//content:"";
+			//background: darken(@client-color-2, 5%);
+			//width:220%;
+			//height:350%;
+			//position:absolute;
+			//z-index:1;
+			//top:0;
+			//left:-175px;
+
+			// Mixins
+			//.transform-rotate(16deg);
+		//å}
 
 		&:hover,
-		&:focus {
-			// Mixins
-			.background-linear-gradient(0, @blue, 100%, @blue);
+		&:focus {				
+			background: darken(@client-color-2, 5%);
 		}
+
+		.button--text {
+			position:relative;
+			z-index:2;
+		}
+
 	}
 	&.tiny {
 		// Variables
