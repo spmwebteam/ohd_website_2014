@@ -3,3 +3,28 @@
 .mobile-none {
 	display:none;
 }
+
+.main-nav {
+
+	&--list{
+
+		text-align:right;
+
+		a {
+			border-top:dashed 1px @light-grey;
+		}
+	}
+
+	&--container {
+		max-height: 0;
+		position: relative;
+		overflow: hidden;
+
+		// Mixins
+		.transition(max-height 0.5s);
+
+		&.is-expanded {
+			max-height: 100em;
+		}
+	}
+}

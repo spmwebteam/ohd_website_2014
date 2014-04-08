@@ -4,3 +4,41 @@
 	border-right: dashed 1px @light-grey;
 }
 
+// Nav 
+
+.main-nav {
+
+	// Variables
+	@5px: (1em * (5 / @base-text-size));
+	@10px: (1em * (10 / @base-text-size));
+
+	&--list {
+
+		a {		
+			position:relative;
+
+			&:hover,
+			&:focus {	
+				color: lighten(@dark-grey, 15%);		
+
+
+				&:after {
+					content:"";
+					position:absolute;
+					bottom:@10px;
+					left:@5px;
+					width:90%;
+					display:block;
+					border-bottom: dashed 1px;
+					
+				}				
+			}
+		}
+	}
+}
+
+// Mobile Nav
+
+.mobile-nav--container {
+		border-top: dashed 1px @light-grey;
+	}

@@ -16,6 +16,16 @@
 	margin-right: auto;
 }
 
+// Logo
+
+.logo {
+
+	img {
+		display:block;
+		margin:0 auto;
+	}
+}
+
 // List Styles
 
 .inline-bulleted-list {
@@ -124,22 +134,26 @@
 	}
 }
 
-.tabbed-content--container {
-	clear:both;
+.tabbed-content {
+
+	&--container {
+		clear:both;
+	}
+
+	&--body {
+		// Mixins
+		.spacing-vertical(padding,55);
+	}
+
+	&--heading {
+		font-weight:@thin-weight;
+		color:@client-color-2;
+		text-transform: uppercase;
+		margin-top: 0;
+		line-height:1em;
+	}
 }
 
-.tabbed-content--body {
-	// Mixins
-	.spacing-vertical(padding,55);
-}
-
-.tabbed-content--heading {
-	font-weight:@thin-weight;
-	color:@client-color-2;
-	text-transform: uppercase;
-	margin-top: 0;
-
-}
 
 // Dashed Rule
 
@@ -148,6 +162,37 @@
 	border-bottom: 0;
 	border-right: 0;
 	border-left:0;
+}
+
+// Icons
+
+.icon {
+	display:inline-block;
+	background: lighten(@client-color-1, 5%);
+	width:30px;
+	height:30px;
+	padding:5px;
+	text-decoration: none;
+
+	&:hover,&:active {
+		background: @client-color-1;
+	}
+
+	&.twitter {
+		.global-sprite(0,0);
+	}
+
+	&.facebook {
+		.global-sprite(1,0);
+	}
+
+	&.yelp {
+		.global-sprite(2,0);
+	}
+
+	&.email {
+		.global-sprite(3,0);
+	}
 }
 
 // Home Showcase
@@ -237,4 +282,46 @@
 		color: darken(@client-color-5, 40%);	
 		padding:@25px 0;	
 	}
+}
+
+// Home Brands
+
+.home-brands {
+	background: lighten(@light-grey, 30%);
+
+	&--heading {
+		color: @grey;
+		text-transform: uppercase;
+	}
+}
+
+// Footer
+
+.main-footer {
+
+	// Variables
+	@25px: (1em * (25 / @base-text-size));
+	@50px: (1em * (50 / @base-text-size));
+
+	&--top {
+		border-bottom: dashed 1px @light-grey;
+		padding: @25px 0;
+	}
+
+	&--bottom {
+		padding: @25px 0;		
+		border-bottom: dashed 1px @light-grey;
+		margin-bottom: @50px;
+	}
+
+	&--heading {
+		color: @client-color-4;
+		font-weight: @semibold-weight;
+		margin-top:0;
+	}
+
+	&--text, &--list {
+		color: @grey;
+	}
+
 }

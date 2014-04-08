@@ -1,31 +1,65 @@
 .main-nav {
 
+	// Variables	
+	@5px: (1em * (5 / @base-text-size));
+	@10px: (1em * (10 / @base-text-size));
+
 	&--list {
 		margin-top: 0;
 
-		a {
-			@10px: (1em * (10 / @base-text-size));
-			@15px: (1em * (15 / @base-text-size));
-			
+		a {			
 			display: block;
-			padding: @10px @15px;
+			padding: @10px @5px;
 			text-decoration: none;
+			color:@dark-grey;
+			font-weight: @semibold-weight;
 
 			&:hover,
 			&:focus,
-			&.is-current {
+			&.is-current {				
 			}
 		}
 	}
 }
 
-
 .eyebrow-nav {
-	border-bottom: dashed 1px @light-grey;
-	color: @grey;
+
+	&--link {
+		color: @client-color-2;
+		text-decoration: none;
+	}
 }
 
-.eyebrow-nav--link {
-	color: @client-color-2;
-	text-decoration: none;
+.mobile-nav {
+	// Variables
+	@10px: (1em * (10 / @base-text-size));	
+
+	&--heading {
+		margin-bottom: @10px;
+	}
+
+	&--link {
+		text-decoration: none;
+		float:left;
+		color: @client-color-2;
+	}
+
+	&--select {
+		cursor:pointer;
+		text-transform: uppercase;
+		position:relative;
+		color:@dark-grey;
+
+		&:before {
+			content:"";
+			position:absolute;
+			top:7px;
+			left:0;
+			margin-left:-20px;
+			width:15px;
+			height:10px;
+			.global-sprite(0,1);
+
+		}
+	}
 }

@@ -122,7 +122,7 @@ $(document).ready(function() {
 
     responsiveNav = {
         config: {
-            targetElems: $(".mobile-nav"),
+            targetElems: $(".mobile-nav--heading"),
             screenSize: $(window).width(),
             currentClass: "is-expanded",
             breakPoint: 767,

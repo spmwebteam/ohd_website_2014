@@ -71,12 +71,30 @@
 			background: darken(@client-color-2, 5%);
 		}
 
-		.button--text {
+		.button-text {
 			position:relative;
 			z-index:2;
 		}
 
 	}
+
+	
+	&.secondary {
+		// Create
+		color: @white;
+		background: @client-color-1;
+		text-transform: uppercase;		
+		position:relative;
+		overflow:hidden;
+		letter-spacing: 1px;
+
+		&:hover,
+		&:focus {				
+			background: darken(@client-color-1, 5%);
+		}
+	}
+
+
 	&.tiny {
 		// Variables
 		@1px: 1em * (1 / @minion-text-size);
